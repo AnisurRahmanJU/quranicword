@@ -1,0 +1,274 @@
+/* --- কালার এবং ভেরিয়েবল সেটআপ --- */
+:root {
+    --gold: #D4AF37;           /* প্রিমিয়াম গোল্ডেন কালার */
+    --gold-bright: #FFD700;    /* উজ্জ্বল গোল্ডেন */
+    --quran-green: #1b4d3e;    /* ইসলামিক ডিপ গ্রিন */
+    --pure-white: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.1); /* গ্লাস ইফেক্ট */
+    --text-shadow: 2px 4px 8px rgba(0,0,0,0.8);
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* --- বেসিক রিসেট --- */
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: #000;
+    color: var(--pure-white);
+    overflow: hidden; /* স্ক্রলবার হাইড করার জন্য */
+}
+
+/* --- মেইন কন্টেইনার --- */
+.main-wrapper {
+    position: relative;
+    max-width: 450px; /* মোবাইল ফ্রেন্ডলি উইডথ */
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+}
+
+/* --- ব্যাকগ্রাউন্ড কাবার ছবি --- */
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.65); /* ছবি কিছুটা অন্ধকার করা যাতে লেখা ফুটে ওঠে */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+        rgba(0,0,0,0.2) 0%, 
+        rgba(0,0,0,0.6) 50%, 
+        rgba(0,0,0,0.95) 100%);
+    z-index: -1;
+}
+
+/* --- কন্টেন্ট এরিয়া --- */
+.content-container {
+    padding: 25px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+/* --- টপ চিপ/ব্যাজ --- */
+.top-stats {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.count-chip {
+    background: var(--gold);
+    color: #000;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* --- মেইন ওয়ার্ড কার্ড (ভিডিওর মতো) --- */
+.word-card {
+    text-align: center;
+    padding: 20px 0;
+    transition: var(--transition-smooth);
+}
+
+.arabic-main {
+    font-family: 'Amiri', serif;
+    font-size: 75px;
+    margin: 0;
+    color: var(--pure-white);
+    text-shadow: var(--text-shadow);
+    letter-spacing: -1px;
+}
+
+.phonetic {
+    font-size: 18px;
+    color: rgba(255,255,255,0.7);
+    margin-top: -5px;
+    font-weight: 300;
+}
+
+.meaning-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.line {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    width: 80px;
+}
+
+.meaning-label {
+    margin: 0 12px;
+    color: var(--gold);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.bangla-meaning {
+    font-size: 42px;
+    color: var(--gold);
+    margin: 0;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* --- কুরআন আয়াত সেকশন --- */
+.ayat-section {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 22px;
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.section-title {
+    font-size: 13px;
+    color: var(--gold);
+    margin-bottom: 12px;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.arabic-verse {
+    font-family: 'Amiri', serif;
+    font-size: 26px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    text-align: right;
+    color: #f1f1f1;
+}
+
+.bangla-verse {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #e0e0e0;
+    font-weight: 400;
+}
+
+/* --- হাইলাইট ক্লাস (গোল্ডেন ওয়ার্ড) --- */
+.hl {
+    color: var(--gold-bright) !important;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+/* --- প্রগ্রেস বার --- */
+.progress-box {
+    margin-top: 10px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 8px;
+}
+
+.progress-bar-container {
+    height: 6px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), #fff);
+    border-radius: 10px;
+    width: 0%;
+    transition: width 0.6s ease;
+}
+
+/* --- নেভিগেশন বাটন --- */
+.navigation {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.btn-prev, .btn-next {
+    border: none;
+    border-radius: 16px;
+    font-weight: 700;
+    font-family: 'Hind Siliguri', sans-serif;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-prev {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 25%;
+    font-size: 20px;
+}
+
+.btn-prev:active { transform: scale(0.9); }
+
+.btn-next {
+    background: var(--gold);
+    color: #000;
+    width: 75%;
+    font-size: 18px;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+.btn-next:active {
+    transform: scale(0.96);
+    background: var(--gold-bright);
+}
+
+/* --- এনিমেশন (ফেইড ইন) --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.word-card, .ayat-section {
+    animation: fadeInUp 0.8s ease;
+}
