@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আল কুরআন শব্দার্থ - প্রিমিয়াম এডিশন</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kaaba">
+            <div class="overlay"></div>
+        </div>
+
+        <div class="content-container">
+            <div class="top-stats">
+                <span class="count-chip">কুরআনে <span id="word-count">...</span> বার এসেছে</span>
+            </div>
+
+            <div class="word-card">
+                <h1 id="arabic-word" class="arabic-main">اللّٰه</h1>
+                <p id="pronunciation" class="phonetic">(আল্লাহ্)</p>
+                
+                <div class="meaning-divider">
+                    <div class="line"></div>
+                    <span class="meaning-label">অনুবাদ</span>
+                    <div class="line"></div>
+                </div>
+
+                <h2 id="translation" class="bangla-meaning">আল্লাহ</h2>
+            </div>
+
+            <div class="ayat-section">
+                <div class="section-title">কুরআনের আয়াত থেকে উদাহরণ:</div>
+                <div class="ayat-box">
+                    <p id="ayat-arabic" class="arabic-verse">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+                    <p id="ayat-meaning" class="bangla-verse">পরম করুণাময় অসীম দয়ালু আল্লাহর নামে।</p>
+                </div>
+            </div>
+
+            <div class="progress-box">
+                <div class="progress-info">
+                    <span id="progress-text">শব্দ ১ / ৫০০</span>
+                    <span id="percent-text">০% সম্পন্ন</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div id="progressBar" class="progress-bar-fill"></div>
+                </div>
+            </div>
+
+            <div class="navigation">
+                <button class="btn-prev" onclick="prevWord()">পূর্ববর্তী</button>
+                <button class="btn-next" onclick="nextWord()">পরবর্তী শব্দ</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="quran.js"></script>
+</body>
+</html>
