@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
 <div class="main-wrapper">
@@ -19,7 +20,7 @@
 
     <div class="content-container">
 
-        <!-- Header -->
+        <!-- HEADER -->
         <div style="text-align:center; padding:20px 15px 10px 15px;">
             <h2 style="
                 font-size:22px;
@@ -32,11 +33,23 @@
             </h2>
         </div>
 
-        <!-- WORD COUNT -->
-        <div class="top-stats">
-            <center><span class="count-chip">
-                কুরআনে <span id="word-count">...</span> বার এসেছে
-            </span></center>
+        <!-- WORD COUNT + SEARCH -->
+        <div class="top-stats" id="topStats">
+            <center>
+
+                <!-- Word Count (NOT clickable) -->
+                <span class="count-chip">
+                    কুরআনে <span id="word-count">...</span> বার এসেছে
+                </span>
+
+                <!-- Search clickable -->
+                <span class="count-chip"
+                      style="margin-left:10px; cursor:pointer;"
+                      onclick="searchWord()">
+                    🔎 কুরআনে এই শব্দটি খুঁজুন
+                </span>
+
+            </center>
         </div>
 
         <!-- WORD SECTION -->
@@ -46,7 +59,7 @@
             <h2 id="translation" class="bangla-meaning">আল্লাহ</h2>
         </div>
 
-        <!-- AYAT -->
+        <!-- AYAT SECTION -->
         <div class="ayat-section">
             <div class="section-title">কুরআনের আয়াত থেকে উদাহরণ:</div>
             <div class="ayat-box">
@@ -61,6 +74,7 @@
                 <span id="progress-text">শব্দ ১ / ৫০০</span>
                 <span id="percent-text">০% সম্পন্ন</span>
             </div>
+
             <div class="progress-bar-container">
                 <div id="progressBar" class="progress-bar-fill"></div>
             </div>
@@ -73,105 +87,25 @@
         </div>
 
         <!-- QUIZ BUTTON -->
-        <button class="btn-next" style="margin-top:10px;" onclick="startQuizMode()">
+        <button class="btn-next"
+                style="margin-top:10px;"
+                onclick="startQuizMode()">
             🎯 কুইজ খেলুন
         </button>
 
-        <!-- QUIZ CONTAINER (Hidden initially) -->
-        <div id="quizSection" style="display:none; margin-top:20px;"></div>
+        <!-- QUIZ SECTION -->
+        <div id="quizSection"
+             style="display:none; margin-top:20px;"></div>
 
     </div>
 </div>
 
+
+<!-- =============================
+     JAVASCRIPT SECTION
+============================== -->
+
 <script src="quran.js"></script>
-
-<script>
-let quizQuestions=[],quizIndex=0,quizScore=0,quizTotal=0;
-
-function startQuizMode(){
-
-    let count=prompt("কতটি প্রশ্ন খেলবেন? (10-100)","10");
-    if(!count) return;
-
-    count=parseInt(count);
-    if(isNaN(count) || count<1) return;
-
-    quizTotal=Math.min(count,quranData.length);
-    quizQuestions=[...quranData].sort(()=>Math.random()-0.5).slice(0,quizTotal);
-
-    quizIndex=0;
-    quizScore=0;
-
-    document.querySelector(".word-card").style.display="none";
-    document.querySelector(".ayat-section").style.display="none";
-    document.querySelector(".progress-box").style.display="none";
-    document.querySelector(".navigation").style.display="none";
-
-    document.getElementById("quizSection").style.display="block";
-
-    renderQuiz();
-}
-
-function renderQuiz(){
-
-    let q=quizQuestions[quizIndex];
-
-    let options=[q.trans];
-    let others=[...quranData].filter(x=>x.trans!==q.trans).sort(()=>Math.random()-0.5);
-
-    for(let i=0;i<3;i++) options.push(others[i].trans);
-    options.sort(()=>Math.random()-0.5);
-
-    let html=`
-        <div class="quiz-container">
-            <div class="quiz-question">${q.word}</div>
-            <div class="quiz-options">
-                ${options.map(opt=>`<button onclick="checkAnswer(this,'${opt}','${q.trans}')">${opt}</button>`).join("")}
-            </div>
-            <div style="margin-top:15px;text-align:center;font-size:13px;">
-                প্রশ্ন ${quizIndex+1}/${quizTotal} | স্কোর ${quizScore}
-            </div>
-        </div>
-    `;
-
-    document.getElementById("quizSection").innerHTML=html;
-}
-
-function checkAnswer(btn,selected,correct){
-
-    let buttons=document.querySelectorAll(".quiz-options button");
-
-    buttons.forEach(b=>{
-        b.disabled=true;
-        if(b.innerText===correct) b.style.background="#2ecc71";
-    });
-
-    if(selected!==correct){
-        btn.style.background="#e74c3c";
-    }else{
-        quizScore++;
-    }
-
-    setTimeout(()=>{
-        quizIndex++;
-        if(quizIndex<quizTotal){
-            renderQuiz();
-        }else{
-            showResult();
-        }
-    },1000);
-}
-
-function showResult(){
-    document.getElementById("quizSection").innerHTML=`
-        <div class="quiz-container">
-            <h2 style="text-align:center;">🎉 কুইজ শেষ</h2>
-            <p style="text-align:center;">আপনার স্কোর: ${quizScore}/${quizTotal}</p>
-            <button onclick="location.reload()" class="btn-next">আবার শুরু</button>
-        </div>
-    `;
-}
-</script>
 
 </body>
 </html>
