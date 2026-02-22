@@ -186,11 +186,11 @@ function showResult(){
                 ${quizScore}/${quizTotal}
             </p><br><br>
 
-            <button
+            <center><button
                 onclick="location.reload()"
                 class="btn-next">
                 📖 আবার পড়ুন
-            </button>
+            </button></center>
         </div>
     `;
 }
