@@ -4,83 +4,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>কোরআনের ৫৫% শিক্ষা</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="main-wrapper">
-        <div class="hero-bg">
-            <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kaaba">
-            <div class="overlay"></div>
-        </div>
+<div class="main-wrapper">
 
- <div class="content-container">
-        <!-- Beautiful Header Section -->
-    <div style="text-align:center; padding:20px 15px 10px 15px;">
-    
-    <h2 style="
-        font-family: 'Hind Siliguri', sans-serif;
-        font-size: 22px;
-        font-weight: 700;
-        background: linear-gradient(90deg, #FFD700, #D4AF37, #FFD700);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin: 0;
-        letter-spacing: 0.5px;">
-        ✨ আসুন কোরআনের ৫৫% শিখি ✨
-    </h2>
-
-    <div style="
-        width: 80px;
-        height: 3px;
-        background: linear-gradient(90deg, transparent, #D4AF37, transparent);
-        margin: 10px auto 0 auto;
-        border-radius: 10px;"></div>
-
-    </div>
-            <div class="top-stats">
-                <span class="count-chip">কুরআনে <span id="word-count">...</span> বার এসেছে</span>
-            </div>
-
-            <div class="word-card">
-                <h1 id="arabic-word" class="arabic-main">اللّٰه</h1>
-                <p id="pronunciation" class="phonetic">(আল্লাহ্)</p>
-                
-                <div class="meaning-divider">
-                    <div class="line"></div>
-                    <span class="meaning-label">অনুবাদ</span>
-                    <div class="line"></div>
-                </div>
-
-                <h2 id="translation" class="bangla-meaning">আল্লাহ</h2>
-            </div>
-
-            <div class="ayat-section">
-                <div class="section-title">কুরআনের আয়াত থেকে উদাহরণ:</div>
-                <div class="ayat-box">
-                    <p id="ayat-arabic" class="arabic-verse">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-                    <p id="ayat-meaning" class="bangla-verse">পরম করুণাময় অসীম দয়ালু আল্লাহর নামে।</p>
-                </div>
-            </div>
-
-            <div class="progress-box">
-                <div class="progress-info">
-                    <span id="progress-text">শব্দ ১ / ৫০০</span>
-                    <span id="percent-text">০% সম্পন্ন</span>
-                </div>
-                <div class="progress-bar-container">
-                    <div id="progressBar" class="progress-bar-fill"></div>
-                </div>
-            </div>
-
-            <div class="navigation">
-                <button class="btn-prev" onclick="prevWord()">পূর্ববর্তী</button>
-                <button class="btn-next" onclick="nextWord()">পরবর্তী শব্দ</button>
-            </div>
-        </div>
+    <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=800&q=80" alt="Kaaba">
+        <div class="overlay"></div>
     </div>
 
-    <script src="quran.js"></script>
+    <div class="content-container">
+
+        <!-- Header -->
+        <div style="text-align:center; padding:20px 15px 10px 15px;">
+            <h2 style="
+                font-size:22px;
+                font-weight:700;
+                background:linear-gradient(90deg,#FFD700,#D4AF37,#FFD700);
+                -webkit-background-clip:text;
+                -webkit-text-fill-color:transparent;
+                margin:0;">
+                ✨ আসুন কোরআনের ৫৫% শিখি ✨
+            </h2>
+        </div>
+
+        <!-- WORD COUNT -->
+        <div class="top-stats">
+            <center><span class="count-chip">
+                কুরআনে <span id="word-count">...</span> বার এসেছে
+            </span></center>
+        </div>
+
+        <!-- WORD SECTION -->
+        <div class="word-card">
+            <h1 id="arabic-word" class="arabic-main">اللّٰه</h1>
+            <p id="pronunciation" class="phonetic">(আল্লাহ্)</p>
+            <h2 id="translation" class="bangla-meaning">আল্লাহ</h2>
+        </div>
+
+        <!-- AYAT -->
+        <div class="ayat-section">
+            <div class="section-title">কুরআনের আয়াত থেকে উদাহরণ:</div>
+            <div class="ayat-box">
+                <p id="ayat-arabic" class="arabic-verse"></p>
+                <p id="ayat-meaning" class="bangla-verse"></p>
+            </div>
+        </div>
+
+        <!-- PROGRESS -->
+        <div class="progress-box">
+            <div class="progress-info">
+                <span id="progress-text">শব্দ ১ / ৫০০</span>
+                <span id="percent-text">০% সম্পন্ন</span>
+            </div>
+            <div class="progress-bar-container">
+                <div id="progressBar" class="progress-bar-fill"></div>
+            </div>
+        </div>
+
+        <!-- NAVIGATION -->
+        <div class="navigation">
+            <button class="btn-prev" onclick="prevWord()">পূর্ববর্তী</button>
+            <button class="btn-next" onclick="nextWord()">পরবর্তী শব্দ</button>
+        </div>
+
+        <!-- QUIZ BUTTON -->
+        <button class="btn-next" style="margin-top:10px;" onclick="startQuizMode()">
+            🎯 কুইজ খেলুন
+        </button>
+
+        <!-- QUIZ CONTAINER (Hidden initially) -->
+        <div id="quizSection" style="display:none; margin-top:20px;"></div>
+
+    </div>
+</div>
+
+<script src="quran.js"></script>
+
+<script>
+let quizQuestions=[],quizIndex=0,quizScore=0,quizTotal=0;
+
+function startQuizMode(){
+
+    let count=prompt("কতটি প্রশ্ন খেলবেন? (10-100)","10");
+    if(!count) return;
+
+    count=parseInt(count);
+    if(isNaN(count) || count<1) return;
+
+    quizTotal=Math.min(count,quranData.length);
+    quizQuestions=[...quranData].sort(()=>Math.random()-0.5).slice(0,quizTotal);
+
+    quizIndex=0;
+    quizScore=0;
+
+    document.querySelector(".word-card").style.display="none";
+    document.querySelector(".ayat-section").style.display="none";
+    document.querySelector(".progress-box").style.display="none";
+    document.querySelector(".navigation").style.display="none";
+
+    document.getElementById("quizSection").style.display="block";
+
+    renderQuiz();
+}
+
+function renderQuiz(){
+
+    let q=quizQuestions[quizIndex];
+
+    let options=[q.trans];
+    let others=[...quranData].filter(x=>x.trans!==q.trans).sort(()=>Math.random()-0.5);
+
+    for(let i=0;i<3;i++) options.push(others[i].trans);
+    options.sort(()=>Math.random()-0.5);
+
+    let html=`
+        <div class="quiz-container">
+            <div class="quiz-question">${q.word}</div>
+            <div class="quiz-options">
+                ${options.map(opt=>`<button onclick="checkAnswer(this,'${opt}','${q.trans}')">${opt}</button>`).join("")}
+            </div>
+            <div style="margin-top:15px;text-align:center;font-size:13px;">
+                প্রশ্ন ${quizIndex+1}/${quizTotal} | স্কোর ${quizScore}
+            </div>
+        </div>
+    `;
+
+    document.getElementById("quizSection").innerHTML=html;
+}
+
+function checkAnswer(btn,selected,correct){
+
+    let buttons=document.querySelectorAll(".quiz-options button");
+
+    buttons.forEach(b=>{
+        b.disabled=true;
+        if(b.innerText===correct) b.style.background="#2ecc71";
+    });
+
+    if(selected!==correct){
+        btn.style.background="#e74c3c";
+    }else{
+        quizScore++;
+    }
+
+    setTimeout(()=>{
+        quizIndex++;
+        if(quizIndex<quizTotal){
+            renderQuiz();
+        }else{
+            showResult();
+        }
+    },1000);
+}
+
+function showResult(){
+    document.getElementById("quizSection").innerHTML=`
+        <div class="quiz-container">
+            <h2 style="text-align:center;">🎉 কুইজ শেষ</h2>
+            <p style="text-align:center;">আপনার স্কোর: ${quizScore}/${quizTotal}</p>
+            <button onclick="location.reload()" class="btn-next">আবার শুরু</button>
+        </div>
+    `;
+}
+</script>
+
 </body>
 </html>
