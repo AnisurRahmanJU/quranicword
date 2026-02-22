@@ -1,2 +1,1 @@
-# quranicword
-Quranic words with meaning and learn quran meaning easily.
+# কোরআনের ৫০% শিক্ষা
