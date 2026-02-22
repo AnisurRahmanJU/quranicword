@@ -1,5 +1,4 @@
 
-
 let quizQuestions=[];
 let quizIndex=0;
 let quizScore=0;
