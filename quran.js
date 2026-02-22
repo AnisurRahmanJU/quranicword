@@ -33,8 +33,7 @@ function searchWord(){
 function startQuizMode(){
 
     let count = prompt(
-        "কতটি প্রশ্ন খেলবেন? (10-100)",
-        "10"
+        "কতটি প্রশ্ন খেলবেন? (1-150)", "10"
     );
 
     if(!count) return;
@@ -195,7 +194,7 @@ function showResult(){
     `;
 }
 
-// ১০০টি শব্দের পূর্ণাঙ্গ ডাটাবেস
+// ১৫০টি শব্দের পূর্ণাঙ্গ ডাটাবেস
 const quranData = [
     // Day 1: Demonstrative Pronouns
     { word: "هَذَا", pron: "(হাযা)", trans: "এটা/এই", count: "২২৫", ayat_ar: "<span class='hl'>هَذَا</span> بَيَانٌ لِّلنَّاسِ", ayat_bn: "<span class='hl'>এটা</span> মানুষের জন্য এক স্পষ্ট বর্ণনা।" },
