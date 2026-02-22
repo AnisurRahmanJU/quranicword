@@ -368,7 +368,7 @@ const quranData = [
     
     // Day 25: Additional Common Words
     { word: "يُرِيدُ", pron: "(ইউরিদু)", trans: "তিনি ইচ্ছা করেন", count: "১৫০", ayat_ar: "اللَّهُ يُرِيدُ أَنْ يَتُوبَ عَلَيْكُمْ", ayat_bn: "আল্লাহ আপনার প্রতি <span class='hl'>ইচ্ছা করেন</span> যে আপনি তাওবা করুন।" },
-    { word: "سَمِيع", pron: "(সামি'", trans: "শ্রোতা", count: "১২৫", ayat_ar: "اللَّهُ سَمِيعٌ عَلِيمٌ", ayat_bn: "আল্লাহ <span class='hl'>শ্রোতা</span> ও জ্ঞানী।" },
+    { word: "سَمِيع", pron: "(সামি)", trans: "শ্রোতা", count: "১২৫", ayat_ar: "اللَّهُ سَمِيعٌ عَلِيمٌ", ayat_bn: "আল্লাহ <span class='hl'>শ্রোতা</span> ও জ্ঞানী।" },
     { word: "عَلِيم", pron: "(আলীম)", trans: "জ্ঞানী", count: "১৩৫", ayat_ar: "اللَّهُ عَلِيمٌ", ayat_bn: "আল্লাহ <span class='hl'>জ্ঞানী</span>।" },
     { word: "مِنْهُمْ", pron: "(মিনহুম)", trans: "তাদের মধ্য থেকে", count: "২০০", ayat_ar: "وَمِنْهُمْ مَنْ يَسْتَمِعُونَ", ayat_bn: "আর তাদের মধ্য থেকে কিছু মানুষ <span class='hl'>শুনে</span>।" },
     { word: "فِي هَذِهِ", pron: "(ফী হাজিহি)", trans: "এতে/এই বিষয়", count: "৯০", ayat_ar: "وَفِي هَذِهِ آيَاتٌ لِّلْمُؤْمِنِينَ", ayat_bn: "এতে রয়েছে আয়াত <span class='hl'>বিশ্বাসীদের জন্য</span>।" },
