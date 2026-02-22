@@ -184,7 +184,7 @@ function showResult(){
             <p style="text-align:center;">
                 আপনার স্কোর:
                 ${quizScore}/${quizTotal}
-            </p><br><br><br>
+            </p><br><br>
 
             <button
                 onclick="location.reload()"
