@@ -189,7 +189,7 @@ function showResult(){
             <button
                 onclick="location.reload()"
                 class="btn-next">
-                আবার শুরু
+                আবার পড়ুন
             </button>
         </div>
     `;
