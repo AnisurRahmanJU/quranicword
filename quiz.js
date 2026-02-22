@@ -1,7 +1,7 @@
 let quizQuestions=[],quizIndex=0,quizScore=0,quizTotal=0;
 
 function startQuizMode(){
-let count=prompt("কতটি প্রশ্ন? (10-100),"10");
+let count=prompt("কতটি প্রশ্ন? (1-150),"10");
 if(!count)return;
 
 quizTotal=Math.min(parseInt(count),quranData.length);
