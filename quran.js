@@ -22,7 +22,7 @@ const quranData = [
     { word: "دُونَ", pron: "(দুনা)", trans: "ছাড়া/ব্যতীত", count: "৮৫", ayat_ar: "مِن <span class='hl'>دُونِ</span> اللَّهِ أَوْلِيَاء", ayat_bn: "আল্লাহকে <span class='hl'>ছাড়া</span> অন্যকে অভিভাবক বানিও না।" },
 
     // Day 4: Directions & Core Words
-    { word: "عِنْدَ", pron: "('ইন্দা)", trans: "নিকট/কাছে", count: "১২৫", ayat_ar: "قُلْ كُلٌّ مِّনْ <span class='hl'>عِندِ</span> اللَّهِ", ayat_bn: "বলুন, সবকিছুই আল্লাহর <span class='hl'>নিকট</span> থেকে।" },
+    { word:"عِنْدَ", pron:"ইন্দা", trans:"নিকট/কাছে", count:"১২৫", ayat_ar:"قُلْ كُلٌّ مِّنْ <span class='hl'>عِندِ</span> اللَّهِ", ayat_bn:"বলুন, সবকিছুই আল্লাহর <span class='hl'>নিকট</span> থেকে।" },
     { word: "يَمِيْن", pron: "(ইয়ামিন)", trans: "ডান/সত্য", count: "২০", ayat_ar: "أَصْحَابُ <span class='hl'>الْيَمِينِ</span> مَا أَصْحَابُ الْيَمِينِ", ayat_bn: "যারা <span class='hl'>ডানপার্শ্বস্থ</span>, কত ভাগ্যবান তারা।" },
     { word: "شِمَال", pron: "(শিমাল)", trans: "বাম/বাদিকে", count: "১০", ayat_ar: "عَنِ الْيَمِينِ وَعَنِ <span class='hl'>الشِّمَالِ</span>", ayat_bn: "ডান ও <span class='hl'>বাম</span> দিক থেকে।" },
     { word: "اللَّه", pron: "(আল্লাহ্)", trans: "আল্লাহ", count: "২৫৫০", ayat_ar: "قُلْ هُوَ <span class='hl'>اللَّهُ</span> أَحَدٌ", ayat_bn: "বলুন, তিনিই <span class='hl'>আল্লাহ</span> একক।" },
