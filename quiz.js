@@ -73,7 +73,7 @@ box.className="quiz-container";
 box.innerHTML=`
 <h2 style="text-align:center;">🎉 কুইজ শেষ</h2>
 <p style="text-align:center;">স্কোর: ${quizScore}/${quizTotal}</p>
-<button onclick="location.reload()" class="quiz-start-btn">আবার শুরু</button>
+<button onclick="location.reload()" class="quiz-start-btn">আবার পড়ুন</button>
 `;
 
 document.querySelector(".content-container").appendChild(box);
